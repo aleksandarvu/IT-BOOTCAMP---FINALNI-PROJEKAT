@@ -18,8 +18,8 @@ public class HumanityHome {
 	private static final String EMAIL_USERNAME_FIELD = "//input[@id='email']";
 	private static final String PASSWORD_FIELD = "//input[@id='password']";
 	private static final String FINAL_LOGIN_BUTTON = "//button[contains(text(),'Log in')]";
-	private static final String USERNAME = "yoyoho@coin-host.net";
-	private static final String PASSWORD = "a1b2c3";
+	private static final String USERNAME = "wawe@itfast.net";
+	private static final String PASSWORD = "12ac99";
 
 	
 	public static void goToUrl(WebDriver driver) {
@@ -50,7 +50,6 @@ public class HumanityHome {
 		getEmailField(driver).click();
 	}
 
-	// user name field fill in
 	public static void inputEmail(WebDriver driver) {
 		getEmailField(driver).sendKeys(USERNAME);
 	}
@@ -63,7 +62,6 @@ public class HumanityHome {
 		getPasswordField(driver).click();
 	}
 
-	// password field fill in
 	public static void inputPassword(WebDriver driver) {
 		getPasswordField(driver).sendKeys(PASSWORD);
 	}

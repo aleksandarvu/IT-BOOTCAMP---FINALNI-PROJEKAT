@@ -1,12 +1,15 @@
 package rs.itbootcamp.humanity.page.objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HumanityStaff {
 
-	private static final String URL = "https://testerinc.humanity.com/app/staff/list/load/true/";
+	public static final String URL = "https://testerinc.humanity.com/app/staff/list/load/true/";
 	private static final String ADD_EMPLOYEES_BUTTON_XPATH = "//button[@id='act_primary']";
 	private static final String FIRST_NAME_AND_LAST_NAME_FIRST_PART_XPATH = "//a[contains(text(),'";
 	private static final String FIRST_NAME_AND_LAST_NAME_LAST_PART_XPATH = "')]";
@@ -15,6 +18,7 @@ public class HumanityStaff {
 	private static final String LAST_NAME_EMPLOYEE_1_XPATH = "//input[@id='_asl1']";
 	private static final String EMAIL_EMPLOYEE_1_XPATH = "//input[@id='_ase1']";
 	private static final String SAVE_EMPLOYEES_BUTTON_XPATH="//button[@id='_as_save_multiple']";
+	private static final String ALL_EMPLOYEES_TABLE_XPATH = "//table[contains(@class,'employeesList')]//tbody";
 	private static final String UPLOAD_PICTURE_BUTTON_XPATH="//input[@id='fileupload']";
 	
 	
@@ -31,8 +35,7 @@ public class HumanityStaff {
 	}
 	
 	public static void inputPicture(WebDriver driver) {
-		
-		driver.findElement(By.xpath(UPLOAD_PICTURE_BUTTON_XPATH)).sendKeys("C:\\Users\\38165\\Desktop\\IT Bootcamp projekat\\picture");
+		driver.findElement(By.xpath(UPLOAD_PICTURE_BUTTON_XPATH)).sendKeys("C:\\Users\\38165\\Desktop\\IT Bootcamp projekat\\picture.jpg");
 	}
 	
 	public static WebElement getAddEmployeesButton(WebDriver driver) {
@@ -52,7 +55,7 @@ public class HumanityStaff {
 	}
 	
 	public static void inputFirstNameField(WebDriver driver) {
-		getFirstNameField(driver).sendKeys("Mitar");;
+		getFirstNameField(driver).sendKeys("Aleksa");;
 	}
 	
 	public static WebElement getLastNameField(WebDriver driver) {
@@ -64,7 +67,7 @@ public class HumanityStaff {
 	}
 		
 	public static void inputLastNameField(WebDriver driver) {
-		getLastNameField(driver).sendKeys("Miric");;
+		getLastNameField(driver).sendKeys("Aleksic");;
 	}
 	
 	public static WebElement getEmailField(WebDriver driver) {
@@ -76,9 +79,9 @@ public class HumanityStaff {
 	}
 			
 	public static void inputEmailField(WebDriver driver) {
-		getEmailField(driver).sendKeys("mmiric@grand.com");;
+		getEmailField(driver).sendKeys("wawe@itfast.net");;
 	}
-
+	
 	public static WebElement getSaveEmployeesButton(WebDriver driver) {
 		return driver.findElement(By.xpath(SAVE_EMPLOYEES_BUTTON_XPATH));
 	}

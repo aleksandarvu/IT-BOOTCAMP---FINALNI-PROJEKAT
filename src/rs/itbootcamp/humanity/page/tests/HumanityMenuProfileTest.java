@@ -2,6 +2,7 @@ package rs.itbootcamp.humanity.page.tests;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -9,10 +10,11 @@ import org.testng.annotations.Test;
 
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
 import rs.itbootcamp.humanity.page.objects.HumanityMeni;
+import rs.itbootcamp.humanity.page.objects.HumanityProfile;
 
-public class HumanityLoginTests {
+public class HumanityMenuProfileTest {
 @Test
-	public static void testLogin() throws InterruptedException {
+	public static void testAppVersion() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		try {
@@ -27,25 +29,17 @@ public class HumanityLoginTests {
 			HumanityHome.clickOnFinalLogInButton(driver);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			Thread.sleep(3000);
-			System.out.println(driver.getCurrentUrl());
-			Assert.assertEquals(driver.getCurrentUrl(), HumanityMeni.URL,"Problem loading!");
-		}catch (AssertionError ae) {
+			HumanityMeni.clickOnArrowDownButton(driver);
+			HumanityMeni.clickOnProfileButton(driver);
+			HumanityProfile.clickEditDetailsButton(driver);
+			HumanityProfile.uploadPicture(driver);
+			
+		}catch (AssertionError asserterror) {
 			Assert.fail();
-			System.out.println(ae.getMessage());
+			System.out.println(asserterror.getMessage());
 		}finally {
 			
 			driver.quit();
 		}
-		
-	
-		
-	}
-		
-	
 }
-	
-		
-		
-	
-		
-	
+}
