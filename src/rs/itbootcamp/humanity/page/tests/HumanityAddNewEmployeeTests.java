@@ -30,29 +30,31 @@ public class HumanityAddNewEmployeeTests {
 		HumanityHome.clickOnPasswordField(driver);
 		HumanityHome.inputPassword(driver);
 		HumanityHome.clickOnFinalLogInButton(driver);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		HumanityMeni.clickOnStaffButton(driver);
 		HumanityStaff.clickOnAddEmployeesButton(driver);
-		HumanityStaff.inputFirstNameField(driver);			
-		HumanityStaff.inputLastNameField(driver);
-		HumanityStaff.inputEmailField(driver);
+		Thread.sleep(3000);
+		HumanityStaff.inputFirstName1Field(driver);			
+		HumanityStaff.inputLastName1Field(driver);
+		HumanityStaff.inputEmail1Field(driver);
 		HumanityStaff.clickSaveEmployeesButton(driver);
 						
-		driver.navigate().back(); 
+		driver.navigate().back();
 		driver.navigate().back();
 		
 		List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Aleksa Aleksic" + "')]"));
-		Assert.assertTrue(list.size() > 0, "Wrong!");
+		Assert.assertTrue(list.size() > 0, "Text not found!");
 		
-		}catch (AssertionError asserterror) {
+		}catch (AssertionError ae) {
 			Assert.fail();
-			System.out.println(asserterror.getMessage());
+			System.out.println(ae.getMessage());
 		}finally {
 			
 			driver.quit();
 		}
 		
 	}
+
 
 }
